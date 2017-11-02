@@ -23,6 +23,8 @@ public class User implements UserDetails {
 
     @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "user")
     private Account account;
+    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "user")
+    private Book book;
 
     public User() {
     }

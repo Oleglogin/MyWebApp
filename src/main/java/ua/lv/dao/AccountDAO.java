@@ -6,6 +6,6 @@ import ua.lv.entity.Account;
 /**
  * Created by User on 01.11.2017.
  */
-public interface AddressDAO extends JpaRepository<Account,Integer> {
+public interface AccountDAO extends JpaRepository<Account,Integer> {
 
 }
