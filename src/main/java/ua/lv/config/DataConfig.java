@@ -1,30 +1,31 @@
 package ua.lv.config;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
+
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
-
 @Configuration
-@EnableWebMvc
-@ComponentScan("ua.lv.dao")
+@EnableJpaRepositories("ua.lv.dao")
+@EnableTransactionManagement
 public class DataConfig {
 
     @Bean
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost/myweb");
+        dataSource.setUrl("jdbc:mysql://localhost/session");
         dataSource.setUsername("root");
         dataSource.setPassword("1234");
         return  dataSource;

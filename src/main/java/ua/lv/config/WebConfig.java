@@ -24,30 +24,6 @@ import java.util.Properties;
 @ComponentScan("ua.lv.*")
 public class WebConfig extends WebMvcConfigurerAdapter{
 
-
-    @Bean
-    public JavaMailSenderImpl mailSender(){
-        JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
-        javaMailSender.setHost("smtp.gmail.com");
-        javaMailSender.setPort(587);
-        javaMailSender.setUsername("okten.web.project@gmail.com");
-        javaMailSender.setPassword("okten2017");
-        Properties properties = javaMailSender.getJavaMailProperties();
-        properties.put("mail.transport.protocol", "smtp");
-        properties.put("mail.smtp.auth", "true");
-        properties.put("mail.smtp.starttls.enable","true");
-        properties.put("mail.debug","true");
-
-        return javaMailSender;
-    }
-
-
-    @Bean
-    public MultipartResolver multipartResolver(){
-        return new StandardServletMultipartResolver();
-    }
-
-
     @Bean
     public InternalResourceViewResolver viewResolver(){
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
@@ -56,14 +32,7 @@ public class WebConfig extends WebMvcConfigurerAdapter{
         return viewResolver;
     }
 
-    @Bean(name = "messageSource")
-    ReloadableResourceBundleMessageSource messageSource(){
-        ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-        messageSource.setBasenames("classpath:validation");
-//        messageSource.setUseCodeAsDefaultMessage(true);
-//        messageSource.setDefaultEncoding("UTF-8");
-        return messageSource;
-    }
+
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
