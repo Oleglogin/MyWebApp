@@ -1,4 +1,4 @@
-package ua.lv.dao.impl;
+package ua.lv.dao;
 
 
 /**

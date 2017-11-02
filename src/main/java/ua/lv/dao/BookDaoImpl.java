@@ -1,9 +1,8 @@
-package ua.lv.dao.impl;
+package ua.lv.dao;
 import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
-import ua.lv.dao.BookDao;
 import ua.lv.entity.Book;
 
 import javax.persistence.EntityManager;
@@ -18,6 +17,20 @@ public class BookDaoImpl implements BookDao {
     public void setEntityManager(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
+
+//    EntityManager::find
+//    EntityManager::merge
+//    EntityManager::persist
+//    EntityManager::remove
+//    EntityManager::createQuery
+
+//    public void remove(Book lawsuit) {
+//        Book c = entityManager.find(Book.class, lawsuit.getId());
+//
+//        entityManager.getTransaction().begin();
+//        entityManager.remove(c);
+//        entityManager.getTransaction().commit();
+//    }
 
     public void addBook(Book book) {
         Session session = entityManager.unwrap(Session.class);

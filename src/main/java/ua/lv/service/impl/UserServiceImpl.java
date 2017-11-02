@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService,UserDetailsService{
         userDAO.save(user);
     }
 
-    public User findByUserName(String username) {
+    public User findByName(String username) {
         return userDAO.findByUserName(username);
     }
 
@@ -47,6 +47,6 @@ public class UserServiceImpl implements UserService,UserDetailsService{
     }
 
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return findByUserName(username);
+        return findByName(username);
     }
 }
