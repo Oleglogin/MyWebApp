@@ -40,7 +40,7 @@ public class AccountController {
         model.addAttribute("currentUser", byUsername);
         account.setUser(byUsername);
         accountService.addAccount(account);
-        return "redirect:/index";
+        return "redirect:/books";
     }
 
 //    @RequestMapping(value = "saveAccount",method = RequestMethod.POST)

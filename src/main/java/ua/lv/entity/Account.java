@@ -17,7 +17,7 @@ public class Account {
     private String email;
     private String firstName;
     private String lastName;
-    //private String avatar;
+    private String avatar;
     private String country;
     private String city;
     @OneToOne(cascade = CascadeType.MERGE,fetch = FetchType.LAZY)
@@ -58,18 +58,18 @@ public class Account {
         this.lastName = lastName;
     }
 
-//    public String getAvatar() {
-//        return avatar;
-//    }
-//    public void setAvatar(MultipartFile multipartFile) {
-//        String path = System.getProperty("user.home") + File.separator + "Pictures\\";
-//        try {
-//            multipartFile.transferTo(new File(path + multipartFile.getOriginalFilename()));
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        this.avatar = "\\avatar\\" + multipartFile.getOriginalFilename();
-//    }
+    public String getAvatar() {
+        return avatar;
+    }
+    public void setAvatar(MultipartFile multipartFile) {
+        String path = System.getProperty("user.home") + File.separator + "Pictures\\";
+        try {
+            multipartFile.transferTo(new File(path + multipartFile.getOriginalFilename()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        this.avatar = "\\avatar\\" + multipartFile.getOriginalFilename();
+    }
 
     public String getCountry() {
         return country;

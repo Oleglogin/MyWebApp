@@ -4,7 +4,6 @@ import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.DispatcherServlet;
-
 import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -20,7 +19,6 @@ public class WebInit implements WebApplicationInitializer {
         DispatcherServlet dispatcherServlet = new DispatcherServlet(context); //приймає на себе перші запити, і дальше розкидує їх
         DelegatingFilterProxy delegatingFilterProxy = new DelegatingFilterProxy();
         servletContext.addFilter("springSecurityFilterChain",delegatingFilterProxy).addMappingForUrlPatterns(null,false,"/*");
-
 
 
         ServletRegistration.Dynamic registration = servletContext.addServlet("dispatcherServlet", dispatcherServlet);

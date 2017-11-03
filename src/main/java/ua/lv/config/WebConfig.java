@@ -33,6 +33,20 @@ public class WebConfig extends WebMvcConfigurerAdapter{
     }
 
 
+    @Bean
+    public MultipartResolver multipartResolver(){
+        return new StandardServletMultipartResolver();
+    }
+
+    @Bean(name = "messageSource")
+    ReloadableResourceBundleMessageSource messageSource(){
+        ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
+        messageSource.setBasenames("classpath:validation");
+//        messageSource.setUseCodeAsDefaultMessage(true);
+//        messageSource.setDefaultEncoding("UTF-8");
+        return messageSource;
+    }
+
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
