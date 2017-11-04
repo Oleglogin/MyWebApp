@@ -16,22 +16,22 @@ public class BookServiceImpl implements BookService {
     private BookDao bookDao;
 
     public void addBook(Book book) {
-        bookDao.addBook(book);
+        bookDao.save(book);
     }
 
     public void updateBook(Book book) {
-        bookDao.updateBook(book);
+        bookDao.save(book);
     }
 
     public void removeBook(int id) {
-        bookDao.removeBook(id);
+        bookDao.delete(id);
     }
 
     public Book getBookById(int id) {
-        return bookDao.getBookById(id);
+        return bookDao.findOne(id);
     }
 
     public List<Book> listBooks() {
-        return bookDao.listBooks();
+        return bookDao.findAll();
     }
 }

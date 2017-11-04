@@ -5,7 +5,7 @@
 <%@ page session="false" %>
 <%@include file="tmp/header.jsp"%>
 
-<a><a href="/index">ack to main menu</a>
+<a><a href="/index">Back to main menu</a>
 
 <br/>
 <br/>
@@ -13,7 +13,7 @@
 <h1>Book List</h1>
 
 <c:if test="${!empty listBooks}">
-    <table class="tg">
+    <table class="tg"">
         <tr>
             <th width="80">ID</th>
             <th width="120">Title</th>

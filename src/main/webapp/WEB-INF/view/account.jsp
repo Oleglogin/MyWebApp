@@ -13,20 +13,5 @@
     <input type="submit" value="Ok">
 </form:form>
 
-<%--<form action="saveAccount" method="post">--%>
-    <%--<input type="text" name="firsName"  placeholder="firstName">--%>
-    <%--<br>--%>
-    <%--<input type="text" name="lastName"  placeholder="lastName">--%>
-    <%--<br>--%>
-    <%--<input type="text" name="country"  placeholder="country">--%>
-    <%--<br>--%>
-    <%--<input type="text" name="city"  placeholder="city">--%>
-    <%--<input type="text" name="email"  placeholder="email">--%>
-    <%--<br>--%>
-    <%--<input type="file" name="avatar"  formenctype="multipart/form-data"/>--%>
-    <%--<br>--%>
-    <%--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
-    <%--<input type="submit" value="Ok">--%>
-<%--</form>--%>
-
+<a><a href="/books">Books</a>
 <%@include file="tmp/footer.jsp"%>
