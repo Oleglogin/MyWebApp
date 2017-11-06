@@ -8,13 +8,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ua.lv.entity.Book;
+import ua.lv.entity.User;
 import ua.lv.service.BookService;
+import ua.lv.service.UserService;
+
+import java.security.Principal;
 
 @Controller
 public class BookController {
 
     @Autowired
     private BookService bookService;
+    @Autowired
+    private UserService userService;
 
     @RequestMapping(value = "books", method = RequestMethod.GET)
     public String listBooks(Model model){
@@ -25,7 +31,13 @@ public class BookController {
     }
 
     @RequestMapping(value = "/books/add", method = RequestMethod.POST)
-    public String addBook(@ModelAttribute("book") Book book){
+    public String addBook(@ModelAttribute("book") Book book,
+                          Model model,
+                          Principal principal){
+        String principalName = principal.getName();
+        User byUsername = userService.findByName(principalName);
+        model.addAttribute("currentUser", byUsername);
+        book.setUser(byUsername);
         if(book.getId() == 0){
             this.bookService.addBook(book);
         }else {

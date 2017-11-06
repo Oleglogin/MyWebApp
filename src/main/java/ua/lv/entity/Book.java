@@ -9,6 +9,7 @@ public class Book {
     private int id;
     private String bookTitle;
     private String bookAuthor;
+//    @MenyToOne(cascade = CascadeType.MERGE,fetch = FetchType.LAZY)
     @OneToOne(cascade = CascadeType.MERGE,fetch = FetchType.LAZY)
     private User user;
 
@@ -44,6 +45,14 @@ public class Book {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
