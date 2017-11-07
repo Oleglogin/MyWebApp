@@ -12,7 +12,7 @@
 
 <h1>Book List</h1>
 
-<c:if test="${!empty listBooks}">
+<c:if test="${!empty listBooksStart}">
     <table class="tg">
         <tr>
             <th width="80">ID</th>
@@ -21,8 +21,9 @@
             <th width="120">Price</th>
             <th width="60">Edit</th>
             <th width="60">Delete</th>
+            <th width="60">User</th>
         </tr>
-        <c:forEach items="${listBooks}" var="book">
+        <c:forEach items="${listBooksStart}" var="book">
             <tr>
                 <td>${book.id}</td>
                 <td><a href="/bookdata/${book.id}" target="_blank">${book.bookTitle}</a></td>
@@ -30,6 +31,7 @@
                 <td>${book.price/100}${book.price%100}</td>
                 <td><a href="<c:url value='/edit/${book.id}'/>">Edit</a></td>
                 <td><a href="<c:url value='/remove/${book.id}'/>">Delete</a></td>
+                <td>${currentUser.username}</td>
             </tr>
         </c:forEach>
     </table>

@@ -25,7 +25,7 @@ public class BookController {
     @RequestMapping(value = "books", method = RequestMethod.GET)
     public String listBooks(Model model){
         model.addAttribute("book", new Book());
-        model.addAttribute("listBooks", this.bookService.listBooks());
+        model.addAttribute("listBooksStart", this.bookService.listBooks());
 
         return "books";
     }
@@ -57,7 +57,7 @@ public class BookController {
     @RequestMapping("edit/{id}")
     public String editBook(@PathVariable("id") int id, Model model){
         model.addAttribute("book", this.bookService.getBookById(id));
-        model.addAttribute("listBooks", this.bookService.listBooks());
+        model.addAttribute("listBooksStart", this.bookService.listBooks());
 
         return "books";
     }

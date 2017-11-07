@@ -7,7 +7,8 @@
                 <a><a href="/login"> Sign in</a>
                 <a><a href="/registration">Sign up</a>
                 <a><a href="/books">Books</a>
-                <a><a href="/ideas">Books</a>
+                <a><a href="/ideas">Ideas</a>
+                <a><a href="/movies">Movies</a>
 
                 <li><a href="/logout"> Logout</a>
 
