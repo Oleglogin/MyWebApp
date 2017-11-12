@@ -54,13 +54,22 @@ public class BookController {
         return "redirect:/books";
     }
 
-    @RequestMapping("edit/{id}")
+
+
+    @RequestMapping( value = "/edit/{id}")
     public String editBook(@PathVariable("id") int id, Model model){
         model.addAttribute("book", this.bookService.getBookById(id));
         model.addAttribute("listBooksStart", this.bookService.listBooks());
 
         return "books";
     }
+//    @RequestMapping(value = "/editMovie/{id}")
+//    public String editMovie(@PathVariable("id") int id,
+//                            Model model){
+//        model.addAttribute("emptyMovie",movieService.getMovieById(id));
+//        model.addAttribute("movieList",movieService.listMovie());
+//        return "movies";
+//    }
 
     @RequestMapping("bookdata/{id}")
     public String bookData(@PathVariable("id") int id, Model model){

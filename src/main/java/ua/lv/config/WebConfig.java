@@ -24,6 +24,8 @@ import java.util.Properties;
 @ComponentScan("ua.lv.*")
 public class WebConfig extends WebMvcConfigurerAdapter{
 
+
+
     @Bean
     public InternalResourceViewResolver viewResolver(){
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
@@ -55,8 +57,8 @@ public class WebConfig extends WebMvcConfigurerAdapter{
                 .addResourceHandler("/resources/**")
                 .addResourceLocations("/resources/");
         registry
-                .addResourceHandler("/avatar/**")
-                .addResourceLocations("file:" + System.getProperty("user.home") + File.separator + "images\\");
+                .addResourceHandler("/workImg/**")
+                .addResourceLocations("file:" + System.getProperty("user.home") + File.separator + "Pictures\\");
     }
 
 }

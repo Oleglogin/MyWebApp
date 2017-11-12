@@ -28,11 +28,24 @@
     </c:if>
 
 <form:form action="/movies/add" modelAttribute="emptyMovie">
-    <form:input path="id" readonly="true"/>
+    <%--<form:input path="id" readonly="true"/>--%>
+    <%--<form:input path="movieName"/>--%>
+    <%--<form:input path="director"/>--%>
+    <%--<form:input path="country"/>--%>
+    <%--<input type="submit">--%>
+
+    <c:if test="${!empty movieName}">
+        <form:input path="id" readonly="true"/>
+    </c:if>
     <form:input path="movieName"/>
     <form:input path="director"/>
     <form:input path="country"/>
-    <input type="submit">
+    <c:if test="${!empty movieName}">
+        <input type="submit" value="Edit Movie"/>
+    </c:if>
+    <c:if test="${empty movieName}">
+        <input type="submit" value="Add Movie">
+    </c:if>
 </form:form>
 
 

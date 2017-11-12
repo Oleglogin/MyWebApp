@@ -1,6 +1,7 @@
 package ua.lv.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
     @GetMapping("/")
-    public String toMainPage(){
+    public String toMainPage(Model model){
         return "index";
     }
 
