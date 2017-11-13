@@ -4,13 +4,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import ua.lv.entity.User;
 import ua.lv.entity.Work;
+import ua.lv.service.UserService;
 import ua.lv.service.WorkService;
+
+import java.security.Principal;
 
 @Controller
 public class WorkController {
     @Autowired
     WorkService workService;
+    @Autowired
+    UserService userService;
 
     @GetMapping("/work")
     public String toWorkPage(Model model){
@@ -20,7 +26,11 @@ public class WorkController {
     }
 
     @RequestMapping(value = "work/add", method = RequestMethod.POST)
-    public String addWork(@ModelAttribute("emptyWork") Work work){
+    public String addWork(@ModelAttribute("emptyWork") Work work, Principal principal, Model model){
+        String principalName = principal.getName();
+        User byUsername = userService.findByName(principalName);
+        model.addAttribute("currentUser", byUsername);
+        work.setUser(byUsername);
         workService.addWork(work);
         return "redirect:/work";
     }

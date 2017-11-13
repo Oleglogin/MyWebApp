@@ -41,11 +41,12 @@
     </div>
 </div>
 <!-- #Header Starts -->
+<div id="works"  class=" clearfix grid">
 
         <c:forEach items="${workList}" var="work">
-                    <div id="works"  class=" clearfix grid">
                         <figure class="effect-oscar  wowload fadeIn" style="background: rosybrown">
                             <img src="${work.workImg}" alt="img01"/>
+                            <h3>${work.user.username}</h3>
                             <figcaption>
                                 <h2><a href="/workData/${work.id}" target="_blank">${work.workTitle}</a></h2>
                                 <p>${work.content}<br>
@@ -54,9 +55,8 @@
                                     <a href="/workData/${work.id}" target="_blank">View more</a>
                             </figcaption>
                         </figure>
-                    </div>
         </c:forEach>
-
+</div>
 <div id="contact" class="spacer">
     <div class="container contactform center">
         <h2 class="text-center  wowload fadeInUp">Add work</h2>

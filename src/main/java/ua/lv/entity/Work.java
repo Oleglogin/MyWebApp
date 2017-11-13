@@ -15,6 +15,16 @@ public class Work {
     public String content;
     public String workImg;
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    @ManyToOne(cascade = CascadeType.MERGE, fetch =  FetchType.EAGER)
+    private User user;
 
     public int getId() {
         return id;

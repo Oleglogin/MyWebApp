@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class User implements UserDetails {
@@ -25,6 +26,17 @@ public class User implements UserDetails {
     private Account account;
     @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "user")
     private Book book;
+
+    public List<Work> getWorks() {
+        return works;
+    }
+
+    public void setWorks(List<Work> works) {
+        this.works = works;
+    }
+
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "user")
+    private List<Work> works;
 
     public User() {
     }
