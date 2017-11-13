@@ -22,22 +22,6 @@
     <br>
     <br>
     <br>
-    <form:form modelAttribute="emptyAccount" action="saveAccount" method="post" enctype="multipart/form-data">
-        <form:input type="text" path="firstName" placeholder="Enter first name"/>
-        <form:input type="text" path="lastName"  placeholder="Enter last name"/>
-        <form:input type="text" path="country"  placeholder="Enter country"/>
-        <form:input type="text" path="city"  placeholder="Enter city"/>
-        <form:input type="email" path="email" placeholder="Enter email"/>
-        <input type="file" name="avatar" formenctype="multipart/form-data"/>
-        <br>
-        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-        <input type="submit" value="Ok">
-    </form:form>
-
-    <br>
-    <br>
-    <br>
-
     <table class="table">
         <tr>
             <td>First Name</td>
@@ -57,12 +41,31 @@
                 <td>${account.city}</td>
                 <td>${account.email}</td>
                 <td><img src="${account.avatar}"width="30" height="30" class="rounded-circle" alt=""></td>
-                <td>${currentUser.username}</td>
+                <td>${account.user.username}</td>
                 <td><a href="<c:url value='/editAccount/${account.id}'/>">Edit</a> </td>
             </tr>
         </c:forEach>
     </table>
+    <br>
+    <br>
+    <br>
+    <form:form modelAttribute="emptyAccount" action="saveAccount" method="post" enctype="multipart/form-data">
+        <form:input type="text" path="firstName" placeholder="Enter first name"/>
+        <form:input type="text" path="lastName"  placeholder="Enter last name"/>
+        <form:input type="text" path="country"  placeholder="Enter country"/>
+        <form:input type="text" path="city"  placeholder="Enter city"/>
+        <form:input type="email" path="email" placeholder="Enter email"/>
+        <input type="file" name="avatar" formenctype="multipart/form-data"/>
+        <br>
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        <input type="submit" value="Ok">
+    </form:form>
+
+
 </div>
+
+
+
 
 
 <a><a href="/index">Main</a>

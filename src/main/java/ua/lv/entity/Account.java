@@ -20,7 +20,7 @@ public class Account {
     private String avatar;
     private String country;
     private String city;
-    @OneToOne(cascade = CascadeType.MERGE,fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.MERGE,fetch = FetchType.EAGER)
     private User user;
 
     public Account() {
