@@ -15,7 +15,7 @@ public interface AccountService {
 
     public void removeAccount(int id);
 
-    public Book getAccountById(int id);
+    public Account getAccountById(int id);
 
     public List<Account> listAccount();
 }

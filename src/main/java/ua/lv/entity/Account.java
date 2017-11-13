@@ -68,7 +68,7 @@ public class Account {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        this.avatar = "\\avatar\\" + multipartFile.getOriginalFilename();
+        this.avatar = "\\workImg\\" + multipartFile.getOriginalFilename();
     }
 
     public String getCountry() {

@@ -26,6 +26,8 @@ public class AccountController {
         User byUsername = userService.findByName(principalName);
         model.addAttribute("currentUser", byUsername);
         model.addAttribute("emptyAccount",new Account());
+        model.addAttribute("usersList",userService.findAll());
+        model.addAttribute("accountList", accountService.listAccount());
         return "account";
     }
 
@@ -40,30 +42,14 @@ public class AccountController {
         model.addAttribute("currentUser", byUsername);
         account.setUser(byUsername);
         accountService.addAccount(account);
-        return "redirect:/books";
+        return "redirect:/account";
     }
 
-//    @RequestMapping(value = "saveAccount",method = RequestMethod.POST)
-//    public String addAccount(Model model,
-//                             Principal principal,
-//                             @RequestParam("firstName") String firstName,
-//                             @RequestParam("lastName") String lastName,
-//                             @RequestParam("country") String country,
-//                             @RequestParam("city") String city,
-//                             @RequestParam("email") String email,
-//                             @RequestParam("avatar") String avatar){
-//        String principalName = principal.getName();
-//        User byUsername = userService.findByName(principalName);
-//        model.addAttribute("currentUser", byUsername);
-//        Account account = new Account();
-//        account.setFirstName(firstName);
-//        account.setLastName(lastName);
-//        account.setCity(city);
-//        account.setCountry(country);
-//        account.setAvatar(avatar);
-//        account.setEmail(email);
-//        account.setUser(byUsername);
-//        accountService.addAccount(account);
-//        return "/account";
+
+//    @RequestMapping(value = "/editAccount/{id}")
+//    public String editAccount(@PathVariable("id") int id, Model model){
+//        model.addAttribute("emptyAccount", accountService.getAccountById(id));
+//        model.addAttribute("accountList", accountService.listAccount());
+//        return "account";
 //    }
 }

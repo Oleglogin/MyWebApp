@@ -42,29 +42,35 @@
 </div>
 <!-- #Header Starts -->
 
-<c:forEach items="${workList}" var="work">
-    <div id="works"  class=" clearfix grid">
-        <figure class="effect-oscar  wowload fadeIn" style="background: rosybrown">
-            <img src="${work.workImg}" alt="img01"/>
-            <figcaption>
-                <h2><a href="/workData/${work.id}" target="_blank">${work.workTitle}</a></h2>
-                <p>${work.content}<br>
-                    <a href="<c:url value='/workRemove/${work.id}'/>">Delete</a>
-                    <a href="<c:url value='/workEdit/${work.id}'/>">Edit</a>
-                    <a href="/workData/${work.id}" target="_blank">View more</a>
-            </figcaption>
-        </figure>
+        <c:forEach items="${workList}" var="work">
+                    <div id="works"  class=" clearfix grid">
+                        <figure class="effect-oscar  wowload fadeIn" style="background: rosybrown">
+                            <img src="${work.workImg}" alt="img01"/>
+                            <figcaption>
+                                <h2><a href="/workData/${work.id}" target="_blank">${work.workTitle}</a></h2>
+                                <p>${work.content}<br>
+                                    <a href="<c:url value='/workRemove/${work.id}'/>">Delete</a>
+                                    <a href="<c:url value='/workEdit/${work.id}'/>">Edit</a>
+                                    <a href="/workData/${work.id}" target="_blank">View more</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+        </c:forEach>
+
+<div id="contact" class="spacer">
+    <div class="container contactform center">
+        <h2 class="text-center  wowload fadeInUp">Add work</h2>
+        <div class="row wowload fadeInLeftBig">
+            <div class="col-sm-6 col-sm-offset-3 col-xs-12">
+                <form:form action="work/add" method="post" modelAttribute="emptyWork" enctype="multipart/form-data">
+                    <form:input path="id" readonly="true"/>
+                    <form:input path="workTitle"/>
+                    <form:input path="content"/>
+                    <input type="file" name="workImg" formenctype="multipart/form-data">
+                    <input type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i>
+                </form:form>
+            </div>
+        </div>
     </div>
-
-</c:forEach>
-
-
-
-<form:form action="work/add" method="post" modelAttribute="emptyWork" enctype="multipart/form-data">
-    <form:input path="id" readonly="true"/>
-    <form:input path="workTitle"/>
-    <form:input path="content"/>
-    <input type="file" name="workImg" formenctype="multipart/form-data">
-    <input type="submit">
-</form:form>
+</div>
 <%@include file="tmp/footer.jsp" %>

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ua.lv.dao.AccountDAO;
 import ua.lv.entity.Account;
+
 import ua.lv.entity.Book;
 import ua.lv.service.AccountService;
 
@@ -22,18 +23,19 @@ public class AccountServiceImpl implements AccountService {
     }
 
     public void updateAccount(Account account) {
-
+        accountDAO.save(account);
     }
 
     public void removeAccount(int id) {
-
+        accountDAO.delete(id);
     }
 
-    public Book getAccountById(int id) {
-        return null;
+    public Account getAccountById(int id) {
+        return accountDAO.findOne(id);
     }
 
     public List<Account> listAccount() {
-        return null;
+        return accountDAO.findAll();
     }
+
 }
