@@ -39,11 +39,11 @@ public class RegistrationController {
         userService.save(user);
         return "redirect:/login";
     }
-//    @RequestMapping(value = "/userRemove/{id}")
-//    public String deleteUser(@PathVariable("id") int id){
-//        userService.delete(id);
-//        return "account";
-//    }
+    @RequestMapping(value = "/userRemove/{id}")
+    public String deleteUser(@PathVariable("id") int id){
+        userService.delete(id);
+        return "redirect:/account";
+    }
 
 
 }

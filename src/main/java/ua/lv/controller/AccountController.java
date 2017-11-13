@@ -46,10 +46,10 @@ public class AccountController {
     }
 
 
-//    @RequestMapping(value = "/editAccount/{id}")
-//    public String editAccount(@PathVariable("id") int id, Model model){
-//        model.addAttribute("emptyAccount", accountService.getAccountById(id));
-//        model.addAttribute("accountList", accountService.listAccount());
-//        return "account";
-//    }
+    @RequestMapping(value = "/editAccount/{id}")
+    public String editAccount(@PathVariable("id") int id, Model model){
+        model.addAttribute("emptyAccount", accountService.getAccountById(id));
+        model.addAttribute("accountList", accountService.listAccount());
+        return "account";
+    }
 }

@@ -46,6 +46,7 @@
             <td>city</td>
             <td>email</td>
             <td>ava</td>
+            <td>user</td>
             <td>Edit</td>
         </tr>
         <c:forEach items="${accountList}" var="account">
@@ -56,6 +57,7 @@
                 <td>${account.city}</td>
                 <td>${account.email}</td>
                 <td><img src="${account.avatar}"width="30" height="30" class="rounded-circle" alt=""></td>
+                <td>${currentUser.username}</td>
                 <td><a href="<c:url value='/editAccount/${account.id}'/>">Edit</a> </td>
             </tr>
         </c:forEach>
