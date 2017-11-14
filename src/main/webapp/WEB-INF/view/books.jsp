@@ -31,7 +31,7 @@
                 <td>${book.price/100}${book.price%100}</td>
                 <td><a href="<c:url value='/edit/${book.id}'/>">Edit</a></td>
                 <td><a href="<c:url value='/remove/${book.id}'/>">Delete</a></td>
-                <td>${currentUser.username}</td>
+                <td>${book.user.username}</td>
             </tr>
         </c:forEach>
     </table>

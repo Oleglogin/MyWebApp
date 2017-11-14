@@ -1,20 +1,28 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@include file="tmp/header.jsp" %>
-<di
-<form:form method="POST" modelAttribute="indexform">
+<div class="container">
+    <a href="/login"> Sign in</a>
+    <a href="/registration">Sign up</a>
+    <a href="/books">Books</a>
+    <a href="/ideas">Ideas</a>
+    <a href="/movies">Movies</a>
+    <a href="/work">Work</a>
+    <a href="/admin">Admin</a>
+
+    <a href="/logout"> Logout</a>
+
+    <button type="button" class="btn btn-primary" data-toggle="popover" title="massage"
+            data-content="yes boot worked">Give me a cursor to me</button>
+
+    <%@ page session="true" %>
+    <% int a = 5; %>
+
+</div>
 
 
-                <a><a href="/login"> Sign in</a>
-                <a><a href="/registration">Sign up</a>
-                <a><a href="/books">Books</a>
-                <a><a href="/ideas">Ideas</a>
-                <a><a href="/movies">Movies</a>
-                <a><a href="/work">Work</a>
-
-                <li><a href="/logout"> Logout</a>
 
 
 
-</form:form>
+
 <%@include file="tmp/footer.jsp"%>

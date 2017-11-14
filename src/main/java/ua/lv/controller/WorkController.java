@@ -47,7 +47,7 @@ public class WorkController {
         model.addAttribute("workList", workService.workList());
         return "work";
     }
-    @RequestMapping(value = "workData/{id}")
+    @RequestMapping("workData/{id}")
     public String workData(@PathVariable("id") int id, Model model){
         model.addAttribute("emptyWork", workService.getWorkById(id));
         return "workData";

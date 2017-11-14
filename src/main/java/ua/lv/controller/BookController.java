@@ -23,8 +23,12 @@ public class BookController {
     private UserService userService;
 
     @RequestMapping(value = "books", method = RequestMethod.GET)
-    public String listBooks(Model model){
+    public String listBooks(Model model, Principal principal){
+        String principalName = principal.getName();
+        User byUsername = userService.findByName(principalName);
+        model.addAttribute("currentUser", byUsername);
         model.addAttribute("book", new Book());
+        model.addAttribute("usersList",userService.findAll());
         model.addAttribute("listBooksStart", this.bookService.listBooks());
 
         return "books";
@@ -53,9 +57,6 @@ public class BookController {
 
         return "redirect:/books";
     }
-
-
-
     @RequestMapping( value = "/edit/{id}")
     public String editBook(@PathVariable("id") int id, Model model){
         model.addAttribute("book", this.bookService.getBookById(id));
@@ -63,18 +64,9 @@ public class BookController {
 
         return "books";
     }
-//    @RequestMapping(value = "/editMovie/{id}")
-//    public String editMovie(@PathVariable("id") int id,
-//                            Model model){
-//        model.addAttribute("emptyMovie",movieService.getMovieById(id));
-//        model.addAttribute("movieList",movieService.listMovie());
-//        return "movies";
-//    }
-
     @RequestMapping("bookdata/{id}")
     public String bookData(@PathVariable("id") int id, Model model){
         model.addAttribute("book", this.bookService.getBookById(id));
-
         return "bookdata";
     }
 }

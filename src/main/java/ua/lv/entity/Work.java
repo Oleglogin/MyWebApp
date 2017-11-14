@@ -68,4 +68,15 @@ public class Work {
     public Work() {
 
     }
+
+    @Override
+    public String toString() {
+        return "Work{" +
+                "id=" + id +
+                ", workTitle='" + workTitle + '\'' +
+                ", content='" + content + '\'' +
+                ", workImg='" + workImg + '\'' +
+                ", user=" + user +
+                '}';
+    }
 }

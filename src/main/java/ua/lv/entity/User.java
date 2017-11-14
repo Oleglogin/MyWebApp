@@ -27,13 +27,7 @@ public class User implements UserDetails {
     @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "user")
     private Book book;
 
-    public List<Work> getWorks() {
-        return works;
-    }
 
-    public void setWorks(List<Work> works) {
-        this.works = works;
-    }
 
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "user")
     private List<Work> works;
@@ -98,6 +92,13 @@ public class User implements UserDetails {
     public void setPassword(String password) {
         this.password = password;
     }
+    public List<Work> getWorks() {
+        return works;
+    }
+
+    public void setWorks(List<Work> works) {
+        this.works = works;
+    }
 
     public String getConfirmPassword() {
         return confirmPassword;
@@ -133,5 +134,23 @@ public class User implements UserDetails {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", confirmPassword='" + confirmPassword + '\'' +
+                ", account=" + account +
+                ", book=" + book +
+                ", works=" + works +
+                ", authority=" + authority +
+                ", accountNonExpired=" + accountNonExpired +
+                ", accountNonLocked=" + accountNonLocked +
+                ", credentialsNonExpired=" + credentialsNonExpired +
+                ", enabled=" + enabled +
+                '}';
     }
 }

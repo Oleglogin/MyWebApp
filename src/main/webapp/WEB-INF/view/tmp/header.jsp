@@ -8,32 +8,34 @@
     <title>Cyrus Studio</title>
 
     <!-- Google fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+    <%--<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>--%>
 
-    <!-- font awesome -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <%--<!-- font awesome -->--%>
+    <%--<link href="maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">--%>
 
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="../../resources/bootstrap/css/bootstrap.min.css" />
+    <%--<!-- bootstrap -->--%>
+    <%--<link rel="stylesheet" href="../../resources/bootstrap/css/bootstrap.min.css" />--%>
 
-    <!-- animate.css -->
-    <link rel="stylesheet" href="../../resources/animate/animate.css" />
-    <link rel="stylesheet" href="../../resources/animate/set.css" />
+    <%--<!-- animate.css -->--%>
+    <%--<link rel="stylesheet" href="../../resources/animate/animate.css" />--%>
+    <%--<link rel="stylesheet" href="../../resources/animate/set.css" />--%>
 
-    <!-- gallery -->
-    <link rel="stylesheet" href="../../resources/gallery/blueimp-gallery.min.css">
+    <%--<!-- gallery -->--%>
+    <%--<link rel="stylesheet" href="../../resources/gallery/blueimp-gallery.min.css">--%>
 
-    <!-- favicon -->
-    <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
-
-
-    <link rel="stylesheet" href="../../resources/style.css">
+    <%--<!-- favicon -->--%>
+    <%--<link rel="shortcut icon" href="../../resources/images/favicon.ico" type="image/x-icon">--%>
+    <%--<link rel="icon" href="../../resources/images/favicon.ico" type="image/x-icon">--%>
 
 
+    <%--<link rel="stylesheet" href="../../resources/style.css">--%>
 
 
 
+
+    <!-- Подключаем Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
 
 </head>

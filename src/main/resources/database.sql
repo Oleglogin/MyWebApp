@@ -1,0 +1,4 @@
+
+
+INSERT INTO user VALUES (5,1,1,'ROLE_ADMIN',1,1,'$2a$11$uSXS6rLJ91WjgOHhEGDx..VGs7MkKZV68Lv5r1uwFu7HgtRn3dcXG','Admin');
+

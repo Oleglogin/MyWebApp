@@ -10,7 +10,7 @@ public class Book {
     private String bookTitle;
     private String bookAuthor;
 //    @MenyToOne(cascade = CascadeType.MERGE,fetch = FetchType.LAZY)
-    @OneToOne(cascade = CascadeType.MERGE,fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.MERGE,fetch = FetchType.EAGER)
     private User user;
 
     private int price;

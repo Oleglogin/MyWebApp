@@ -1,12 +1,15 @@
 <%@include file="tmp/header.jsp"%>
-<div id="works"  class=" clearfix grid">
-    <figure class="effect-oscar  wowload fadeIn" style="background: rosybrown">
-        <img src="${work.workImg}" alt="img01"/>
-        <figcaption>
-            <h2><a href="/workData/${work.id}" target="_blank">${work.workTitle}</a></h2>
-            <p>${work.content}<br>
-
-        </figcaption>
-    </figure>
-</div>
+<table class="tg">
+    <tr>
+        <th width="80">ID</th>
+        <th width="120">Title</th>
+        <th width="120">content</th>
+        <th width="120">Price</th>
+    </tr>
+    <tr>
+        <td>${work.id}</td>
+        <td>${work.bookTitle}</td>
+        <td>${work.content}</td>
+    </tr>
+</table>
 <%@include file="tmp/footer.jsp"%>

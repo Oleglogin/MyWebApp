@@ -4,8 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.authentication.configurers.provisioning.InMemoryUserDetailsManagerConfigurer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -36,6 +38,27 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         return daoAuthenticationProvider;
     }
 
+    private InMemoryUserDetailsManagerConfigurer<AuthenticationManagerBuilder> inMemoryConfigurer() {
+        return new InMemoryUserDetailsManagerConfigurer<AuthenticationManagerBuilder>();
+    }
+
+    @Autowired
+    public void configureInMemory(AuthenticationManagerBuilder auth, AuthenticationProvider provider) throws Exception {
+        inMemoryConfigurer()
+                .withUser("admin")
+                .password("admin")
+                .authorities("ROLE_ADMIN")
+                .and()
+                .configure(auth);
+        inMemoryConfigurer()
+                .withUser("manager")
+                .password("manager")
+                .authorities("ROLE_MANAGER")
+                .and()
+                .configure(auth);
+
+        auth.authenticationProvider(provider);
+    }
 
 
     @Override
