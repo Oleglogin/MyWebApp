@@ -3,70 +3,7 @@
 <%@include file="tmp/header.jsp"%>
 
 <!-- Header Starts -->
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Menu</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">ARTStudio</a>
-        </div>
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="/index">main</a></li>
-                <li><a href="/index">main</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/index">Main</a></li>
-                        <li><a href="/account">Account</a></li>
-                        <li><a href="/books">Book</a></li>
-                        <li class="divider"></li>
-                        <li><a href="/login">Sign in</a></li>
-                        <li class="divider"></li>
-                        <li><a href="/registration">Sign up</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Поиск">
-                </div>
-                <button type="submit" class="btn btn-default">send</button>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="/index">main</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/index">Main</a></li>
-                        <li><a href="/account">Account</a></li>
-                        <li><a href="/books">Book</a></li>
-                        <li class="divider"></li>
-                        <li><a href="/login">Sign in</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<div class="dropdown">
-    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">Список <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-        <li class="dropdown-header">Заголовок 1</li>
-        <li><a href="#">CSS</a></li>
-        <li class="disabled"><a href="#">HTML</a></li>
-        <li><a href="#">jQuery</a></li>
-        <li class="divider"></li>
-        <li class="dropdown-header">Заголовок 2</li>
-        <li><a href="#">Javascript</a></li>
-    </ul>
-</div>
 <!-- #Header Starts -->
 <%--<div id="works"  class="grid container-fluid">--%>
         <%--<c:forEach items="${workList}" var="work">--%>
@@ -83,7 +20,7 @@
             <%--</figure>--%>
         <%--</c:forEach>--%>
 <%--</div>--%>
-
+hello <h2>${currentUser.id} <a href="myWorks/${emptyWork.id}" target="_blank">Show ${currentUser.username} works</a></h2>
 
 <div class="container-fluid">
     <div class="row">
@@ -92,7 +29,7 @@
                     <h3><a href="/workData/${work.id}" target="_blank">${work.workTitle}</a></h3>
                     <img src="${work.workImg}" alt="img01" class="img-responsive img-thumbnail"/>
                     <div class="container">
-                        <h4>${work.user.username}</h4>
+                        <h4><a href="/userWork/${work.id}" target="_blank">${work.user.username}</a></h4>
                         <p>${work.content}</p>
                     </div>
 

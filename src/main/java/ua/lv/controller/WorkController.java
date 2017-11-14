@@ -19,7 +19,10 @@ public class WorkController {
     UserService userService;
 
     @GetMapping("/work")
-    public String toWorkPage(Model model){
+    public String toWorkPage(Model model,Principal principal){
+        String principalName = principal.getName();
+        User byUsername = userService.findByName(principalName);
+        model.addAttribute("currentUser", byUsername);
         model.addAttribute("emptyWork", new Work());
         model.addAttribute("workList", workService.workList());
         return "work";
@@ -49,7 +52,26 @@ public class WorkController {
     }
     @RequestMapping("workData/{id}")
     public String workData(@PathVariable("id") int id, Model model){
-        model.addAttribute("emptyWork", workService.getWorkById(id));
+        model.addAttribute("work", workService.getWorkById(id));
         return "workData";
+    }
+    @RequestMapping("userWork/{id}")
+    public String userWork(@PathVariable("id")int id, Model model,Principal principal){
+        String principalName = principal.getName();
+        User byUsername = userService.findByName(principalName);
+        model.addAttribute("currentUser", byUsername);
+        model.addAttribute("work",workService.getWorkById(id));
+        model.addAttribute("workList",workService.workList());
+        return "userWork";
+    }
+
+    @RequestMapping(value = "myWorks/{id}")
+    public String myWorks(Model model, Principal principal, @PathVariable("id")int id){
+        String principalName = principal.getName();
+        User byUsername = userService.findByName(principalName);
+        model.addAttribute("currentUser", byUsername);
+        model.addAttribute("emptyWork",workService.getWorkById(id));
+        model.addAttribute("workList",workService.workList());
+        return "myWork";
     }
 }

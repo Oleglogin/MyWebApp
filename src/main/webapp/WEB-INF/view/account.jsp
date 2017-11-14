@@ -3,6 +3,7 @@
 
 <%@include file="tmp/header.jsp"%>
 <div class="container">
+    hello ${currentUser.username}
     <c:if test="${!empty usersList}">
         <table class="table">
             <tr>
