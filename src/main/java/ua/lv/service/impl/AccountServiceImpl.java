@@ -6,7 +6,6 @@ import org.springframework.transaction.annotation.Transactional;
 import ua.lv.dao.AccountDAO;
 import ua.lv.entity.Account;
 
-import ua.lv.entity.Book;
 import ua.lv.service.AccountService;
 
 import java.util.List;

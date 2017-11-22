@@ -22,7 +22,8 @@ public class Account {
     private String city;
     @OneToOne(cascade = CascadeType.MERGE,fetch = FetchType.EAGER)
     private User user;
-
+    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy ="account")
+    private Experience experience;
     public Account() {
     }
 
@@ -95,8 +96,11 @@ public class Account {
         this.user = user;
     }
 
+    public void setExperience(Experience experience) {
+        this.experience = experience;
+    }
 
-
-
-
+    public Experience getExperience() {
+        return experience;
+    }
 }

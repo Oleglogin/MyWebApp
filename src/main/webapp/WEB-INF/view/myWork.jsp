@@ -4,10 +4,8 @@ hello${currentUser.username}
 hello${currentUser.id}
 <c:forEach items="${workList}" var="work">
     <c:if test="${work.user.id == currentUser.id}">
-        <div class="container-fluid">
+        <div class="container-fluid col-md-3">
             <div class="row">
-                ${work.id}
-                ${work.workTitle}
                 <img src="${work.workImg}" alt="img01" class="img-responsive img-thumbnail "/>
             </div>
         </div>

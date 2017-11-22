@@ -35,6 +35,8 @@ hello <h2>${currentUser.id} <a href="myWorks/${emptyWork.id}" target="_blank">Sh
 
                         <a href="<c:url value='/workRemove/${work.id}'/>">Delete</a>
                         <a href="<c:url value='/workEdit/${work.id}'/>">Edit</a>
+                        <a href="<c:url value='/workLikes/${work.id}'/>">Like</a>
+                        <a href="<c:url value='/workDislikes/${work.id}'/>">Dislike</a>
                         <a href="workData/${work.id}" target="_blank">View more</a>
                 </div>
         </c:forEach>
@@ -44,20 +46,13 @@ hello <h2>${currentUser.id} <a href="myWorks/${emptyWork.id}" target="_blank">Sh
 
 
 
-<div id="contact" class="spacer">
-    <div class="container contactform center">
-        <div class="row wowload fadeInLeftBig">
-            <h2 class="text-center  wowload fadeInUp">Add work</h2>
-            <div class="col-sm-6 col-sm-offset-3 col-xs-12">
+
                 <form:form action="work/add" method="post" modelAttribute="emptyWork" enctype="multipart/form-data">
-                    <form:input path="id" readonly="true"/>
+                    <%--<form:input path="id" readonly="true"/>--%>
                     <form:input path="workTitle"/>
                     <form:input path="content"/>
                     <input type="file" name="workImg" formenctype="multipart/form-data">
                     <input type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i>
                 </form:form>
-            </div>
-        </div>
-    </div>
-</div>
+
 <%@include file="tmp/footer.jsp" %>

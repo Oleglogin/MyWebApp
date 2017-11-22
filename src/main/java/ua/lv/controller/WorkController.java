@@ -1,6 +1,7 @@
 package ua.lv.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.method.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +11,7 @@ import ua.lv.service.UserService;
 import ua.lv.service.WorkService;
 
 import java.security.Principal;
+import java.util.List;
 
 @Controller
 public class WorkController {
@@ -74,4 +76,6 @@ public class WorkController {
         model.addAttribute("workList",workService.workList());
         return "myWork";
     }
+
+
 }

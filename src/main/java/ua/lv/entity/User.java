@@ -24,8 +24,7 @@ public class User implements UserDetails {
 
     @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "user")
     private Account account;
-    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "user")
-    private Book book;
+
 
 
 
@@ -144,7 +143,6 @@ public class User implements UserDetails {
                 ", password='" + password + '\'' +
                 ", confirmPassword='" + confirmPassword + '\'' +
                 ", account=" + account +
-                ", book=" + book +
                 ", works=" + works +
                 ", authority=" + authority +
                 ", accountNonExpired=" + accountNonExpired +

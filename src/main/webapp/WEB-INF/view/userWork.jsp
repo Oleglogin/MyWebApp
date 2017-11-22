@@ -1,19 +1,25 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="tmp/header.jsp"%>
-hello${currentUser.username}
-hello${currentUser.id}
+<%--hello${currentUser.username}--%>
+<%--hello${currentUser.id}--%>
+${work.id} picture
+<%--${work.workTitle}--%>
+${work.user.id} user
 
-<c:forEach items="${workList}" var="work">
-    <c:if test="${work.user.id == currentUser.id}">
-        <div class="container-fluid">
-            <div class="row">
-                    ${work.id}
-                    ${work.workTitle}
-                <img src="${work.workImg}" alt="img01" class="img-responsive img-thumbnail "/>
+<% int id_user = 0; %>
+<%= id_user%>
+
+
+        <c:forEach items="${workList}" var="work">
+            <c:if test="${work.user.id == work.user.id}">
+            <div class="container-fluid col-md-3">
+                <div class="row">
+                    <img src="${work.workImg}" alt="img01" class="img-responsive img-thumbnail "/>
+                </div>
             </div>
-        </div>
+            </c:if>
+        </c:forEach>
 
-    </c:if>
 
-</c:forEach>
+
 <%@include file="tmp/footer.jsp"%>

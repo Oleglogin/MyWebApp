@@ -8,10 +8,10 @@
         <th>country</th>
     </tr>
     <tr>
-        <td>${movie.id}</td>
-        <td>${movie.movieName}</td>
-        <td>${movie.director}</td>
-        <td>${movie.country}</td>
+        <td>${emptyMovie.id}</td>
+        <td>${emptyMovie.movieName}</td>
+        <td>${emptyMovie.director}</td>
+        <td>${emptyMovie.country}</td>
     </tr>
 </table>
 <%@include file="tmp/footer.jsp"%>

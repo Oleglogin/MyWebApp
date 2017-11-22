@@ -1,7 +1,6 @@
 package ua.lv.service;
 
 import ua.lv.entity.Account;
-import ua.lv.entity.Book;
 
 import java.util.List;
 

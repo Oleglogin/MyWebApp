@@ -7,12 +7,14 @@
     <c:if test="${!empty usersList}">
         <table class="table">
             <tr>
+                <td>ID</td>
                 <td>Login</td>
                 <td>Password</td>
                 <td>Delete</td>
             </tr>
             <c:forEach items="${usersList}" var="user">
                 <tr>
+                    <td>${user.id}</td>
                     <td>${user.username}</td>
                     <td>${user.password}</td>
                     <td><a href="<c:url value='/userRemove/${user.id}'/>">Delete</a></td>
@@ -23,8 +25,11 @@
     <br>
     <br>
     <br>
+
+
     <table class="table">
         <tr>
+            <td>ID</td>
             <td>First Name</td>
             <td>Last Name</td>
             <td>country</td>
@@ -36,6 +41,7 @@
         </tr>
         <c:forEach items="${accountList}" var="account">
             <tr>
+                <td>${account.id}</td>
                 <td>${account.firstName}</td>
                 <td>${account.lastName}</td>
                 <td>${account.country}</td>
@@ -61,6 +67,12 @@
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         <input type="submit" value="Ok">
     </form:form>
+
+    <br>
+    <br>
+    <br>
+
+
 
 
 </div>

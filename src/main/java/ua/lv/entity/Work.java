@@ -10,18 +10,15 @@ public class Work {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int id;
-    public String workTitle;
+    private String workTitle;
     @Column(columnDefinition = "text")
-    public String content;
-    public String workImg;
+    private String content;
+    private String workImg;
 
-    public User getUser() {
-        return user;
-    }
+    private int likes;
+    private int dislikes;
 
-    public void setUser(User user) {
-        this.user = user;
-    }
+
 
     @ManyToOne(cascade = CascadeType.MERGE, fetch =  FetchType.EAGER)
     private User user;
@@ -63,6 +60,29 @@ public class Work {
         }
         this.workImg = "\\workImg\\" + multipartFile.getOriginalFilename();
 
+    }
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+
+    public int getDislikes() {
+        return dislikes;
+    }
+
+    public void setDislikes(int dislikes) {
+        this.dislikes = dislikes;
     }
 
     public Work() {
