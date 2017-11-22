@@ -15,7 +15,7 @@
             <c:forEach items="${experienceList}" var="exper">
                 <tr>
                     <td>${exper.id}</td>
-                    <td>${exper.workExperience}</td>
+                    <td><a href="/expData/${exper.id}" target="_blank">${exper.workExperience}</a></td>
                     <td>${exper.university}</td>
                     <td>${exper.account.id}</td>
                     <td><a href="<c:url value='/experienceDelete/${exper.id}'/>">Delete</a></td>

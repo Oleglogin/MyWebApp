@@ -43,4 +43,9 @@ public class ExperienceController {
         experienceService.removeExperience(id);
         return "redirect:/experience";
     }
+    @RequestMapping(value ="expData/{id}")
+    public String expData(Model model, @PathVariable("id") int id){
+        model.addAttribute("emptyExperience",experienceService.getExperienceById(id));
+        return "expData";
+    }
 }
