@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ua.lv.entity.Experience;
-import ua.lv.entity.User;
 import ua.lv.service.AccountService;
 import ua.lv.service.ExperienceService;
 
@@ -34,7 +33,7 @@ public class ExperienceController {
 
     @RequestMapping(value = "/experienceEdit/{id}")
     public String editExperience(@PathVariable("id") int id, Model model){
-        model.addAttribute("experienceList", experienceService.ExperienceList());
+//        model.addAttribute("experienceList", experienceService.ExperienceList());
         model.addAttribute("emptyExperience", experienceService.getExperienceById(id));
         return "experience";
     }

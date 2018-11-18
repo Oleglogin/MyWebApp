@@ -8,4 +8,6 @@ import ua.lv.entity.Work;
  * Created by User on 11.11.2017.
  */
 public interface WorkDAO extends JpaRepository<Work,Integer> {
+    @Query("from Work u where u.workImg=:username")
+    Work findByWorkImg(String workImg);
 }

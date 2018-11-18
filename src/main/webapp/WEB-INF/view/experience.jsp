@@ -34,7 +34,7 @@
         <form:input path="university"/>
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         <input type="submit" value="Ok">
-    </form:form></div>
+    </form:form>
 <div class="container">
 </div>
 <%@include file="tmp/footer.jsp" %>

@@ -6,7 +6,7 @@
     <a href="/registration">Sign up</a>
     <a href="/books">Books</a>
     <a href="/ideas">Ideas</a>
-    <a href="/movies">Movies</a>
+    <a href="/experience">experience</a>
     <a href="/work">Work</a>
     <a href="/admin">Admin</a>
 

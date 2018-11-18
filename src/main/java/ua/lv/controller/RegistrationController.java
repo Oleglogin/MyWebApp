@@ -1,7 +1,6 @@
 package ua.lv.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.method.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
@@ -27,6 +26,7 @@ public class RegistrationController {
     @GetMapping("/registration")
     public String toRegistration(Model model){
         model.addAttribute("emptyUser",new User());
+        model.addAttribute("userList",userService.findAll());
         return "registration";
     }
 
@@ -42,7 +42,13 @@ public class RegistrationController {
     @RequestMapping(value = "/userRemove/{id}")
     public String deleteUser(@PathVariable("id") int id){
         userService.delete(id);
-        return "redirect:/account";
+        return "redirect:/registration";
+    }
+    @RequestMapping(value = "/userEdit/{id}")
+    public String editUser(Model model,@PathVariable("id") int id){
+        model.addAttribute("emptyUser", userService.findOne(id));
+        model.addAttribute("userList",userService.findAll());
+        return "registration";
     }
 
 

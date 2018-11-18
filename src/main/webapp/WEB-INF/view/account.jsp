@@ -11,6 +11,7 @@
                 <td>Login</td>
                 <td>Password</td>
                 <td>Delete</td>
+                <td>Edit</td>
             </tr>
             <c:forEach items="${usersList}" var="user">
                 <tr>
@@ -18,6 +19,7 @@
                     <td>${user.username}</td>
                     <td>${user.password}</td>
                     <td><a href="<c:url value='/userRemove/${user.id}'/>">Delete</a></td>
+                    <td><a href="<c:url value='/userEdit/${user.id}'/>">Edit</a></td>
                 </tr>
             </c:forEach>
         </table>
@@ -49,7 +51,7 @@
                 <td>${account.email}</td>
                 <td><img src="${account.avatar}"width="30" height="30" class="rounded-circle" alt=""></td>
                 <td>${account.user.username}</td>
-                <td><a href="<c:url value='/editAccount/${account.id}'/>">Edit</a> </td>
+                <td><a href="<c:url value='/editAccount/${account.id}'/>">Edit</a></td>
             </tr>
         </c:forEach>
     </table>
